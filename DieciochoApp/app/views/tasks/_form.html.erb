@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col">
+    <%= form_with(model: task, local: true) do |form| %>
+      <% if task.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+          <ul>
+          <% task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :image %>
+        <%= form.text_field :image, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :user_ids %>
+        <%= form.collection_select(:user_ids, @users, :id, :email, {}, {class: 'form-control', multiple: true}) %>
+      </div>
+
+      <%= form.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

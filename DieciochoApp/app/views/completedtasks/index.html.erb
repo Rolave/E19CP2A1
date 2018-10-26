@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col">
+    <h1>Tareas completadas</h1>
+  </div>
+</div>
+
+<div class="row tasks">
+
+  <% @completedtasks.each do |ct| %>
+  <div class="col-md-3 tasks__item">
+    <div class="card">
+      <img class="card-img-top" src="<%= ct.task.image %>" alt="<%= ct.task.name %>">
+      <div class="card-body">
+        <h4 class="card-title"><%= ct.task.name %></h4>
+        <a href="<%= completedtask_path(ct) %>" class="btn btn-danger btn-sm" data-method="delete">No completada</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>

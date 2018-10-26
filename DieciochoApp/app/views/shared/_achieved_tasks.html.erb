@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+<div class="row">
+  <div class="col">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-light">
+      Tareas completadas: <strong><%= current_user.completedtasks.count %></strong> / <%= @tasks.count %>
+    </li>
+  </ul>
+  </div>
+</div>
+<% end %>

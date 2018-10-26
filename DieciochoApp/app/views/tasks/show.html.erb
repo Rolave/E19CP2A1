@@ -1,0 +1,18 @@
+<div class="jumbotron tasks__background" style="background-image: url(<%= @task.image %>)">
+    <h1 class="display-4"><%= @task.name %></h1>
+    <p class="lead">Esta es una tarea de definitivamente debe cumplir el dieciocho de septiembre.</p>
+</div>
+
+<div class="row">
+  <div class="col">
+    <ul class="list-group" style="margin-bottom: 20px;">
+      <li class="list-group-item list-group-item-primary">Usuarios que ya cumplieron esta tarea</li>
+      <% @task.users.each do |user| %>
+        <li class="list-group-item"><%= user.email %></li>
+      <% end %>
+    </ul>
+
+    <%= link_to 'Back', tasks_path, class: 'btn btn-primary' %>
+
+  </div>
+</div>
