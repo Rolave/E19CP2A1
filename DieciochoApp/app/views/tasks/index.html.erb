@@ -13,7 +13,11 @@
       <div class="card-body">
         <h4 class="card-title"><%= task.name %></h4>
         <%= link_to 'Ver tarea', task, class: 'btn btn-primary btn-sm' %>
+        <% unless current_user.completedtasks.exists?(task.id) %>
         <a href="<%= task_completedtasks_path(task) %>" class="btn btn-success btn-sm" data-method="post">Completar tarea</a>
+        <% else %>
+        <a href="<%= completedtask_path(task) %>" class="btn btn-danger btn-sm" data-method="delete">No completada</a>
+        <% end %>
       </div>
     </div>
   </div>
