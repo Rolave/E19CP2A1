@@ -1,32 +1,17 @@
-# Actividad 31 - Postgresql
+# Prueba II de Rails
 
-#### En esta actividad trabajaremos con las diferentes queries desde el terminal de postgres.
-#### Para desarrollar esta actividad, tendrán que anotar cada una de las queries que utilizaron en un archivo **txt** y subir este archivo a la plataforma.
-#### Deben también ingresar, al final de este archivo, el nombre de los integrantes del grupo que participaron en el desarrollo de esta actividad.
+El objetivo de esta actividad es evaluar la implementación de una relacion N-a-N en Rails a partir de las historias de usuario. Además reforzar conocimientos de patrón de diseño MVC, arquitectura REST y autenticación.
+En esta evaluación desarrollarás una **ToDo List App** para la celebración del 18 de Septiembre.
+Cada usuario que se registre puede ir marcando las tareas del 18 como completadas.
 
-
-## Ejercicio 1
-
-#### Crear base de datos en base a los requerimientos enviados por el cliente.
-
-1. Crear una base de datos llamada **call_list**
-2. En la base de datos recien creada, crear la tabla **users** con los campos id (clave primaria), first_name, email.
-3. **Ingresar un usuario, llamado Carlos** (el resto de los datos deben inventarlos).
-4. **Ingresar un usuario, llamada Laura** (el resto de los datos deben inventarlos).
-5. Crear una tabla llamada **calls** con los campos id (clave primaria), phone, date, user_id (foreign key relacionado a users).
-6. Agregar a la tabla **users** el campo **last_name**.
-7. Ingresar el apellido del usuario Carlos.
-8. Ingresar el apellido del usuario Laura.
-9. Ingresar 6 llamadas asociadas al usuario Laura.
-10. Ingresar 4 llamadas asociadas al usuario Carlos.
-11. Crear un nuevo usuario.
-12. Seleccionar la cantidad de llamados de cada uno de los usuarios (nombre de usuario y cantidad de llamadas).
-13. Seleccionar los llamados del usuario llamado Carlos ordenados por fecha en orden descendente.
+**Buena suerte !!**
 
 
+## Historias de usuario
 
-	>#### Nuevos cambios solicitados por cliente.
-	>
-	>"Necesito agregar a la base una tabla de auditoría que registre el motivo del borrado de una llamada y el usuario que lo efectuó."
-
-14. A partir de la base anterior, agregar este requerimiento y modelar la base de datos (agregar print de pantalla [utilizar <a href="https://www.draw.io/">https://www.draw.io/</a>]).
+* Yo como usuario, desde el listado de tareas, debo poder ver todas las tareas para poder ir completando cada una.
+* Yo como usuario, desde el listado de tareas, debo poder marcar una tarea como completada para llevar un registro de mis tareas completadas, luego debo ser redirigido al listado de tareas.
+* Yo como usuario, desde el listado de tareas, debo poder ingresar al detalle de una tarea para ver los usuarios que la han completado.
+* Yo como usuario, desde el listado de tareas, puedo marcar como NO completada una tarea que se encontraba completada para poder corregir una que completé una tarea que se encontraba completada para poder corregir una que completé por error, luego debo ser redirigido al listado de tareas.
+* Yo como usuario, desde cualquier vista, debo poder ver la barra de navegación con el conteo de tareas completadas para saber cuantas tareas llevo completadas del total.
+* Yo como usuario, desde la vista de detalle de una tarea, puedo ver un ranking de los primeros cinco usuarios en completar la tarea junto con su nombre y foto de perfil, además de una lista simple de todos los usuarios que han completado la tarea.
