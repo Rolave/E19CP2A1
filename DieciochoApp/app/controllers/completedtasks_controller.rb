@@ -2,6 +2,7 @@ class CompletedtasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @tasks = Task.all
     @completedtasks = current_user.completedtasks
   end
 
